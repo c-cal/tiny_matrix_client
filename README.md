@@ -8,7 +8,7 @@ https://c-cal.github.io/tiny_matrix_client/
 
 ## Features
 
-- [ ] log in
+- [x] log in
 
 - [ ] see a list of channels user is part of
 
@@ -17,5 +17,3 @@ https://c-cal.github.io/tiny_matrix_client/
 - [ ] show recent messages of this channel
 
 - [ ] post a new message
-
-
