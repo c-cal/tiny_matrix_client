@@ -84,7 +84,7 @@ class Rooms extends Component {
   }
 
   listRooms() {
-    const rooms = this.state.rooms;
+    const { rooms } = this.state;
     return rooms.map(room =>
       <option key={room.roomId} value={room.roomId}>{room.name}</option>
     );
