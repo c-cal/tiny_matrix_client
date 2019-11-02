@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/tiny_matrix_client/static/css/main.b100e6da.chunk.css",
+    "main.js": "/tiny_matrix_client/static/js/main.b0630e8e.chunk.js",
+    "main.js.map": "/tiny_matrix_client/static/js/main.b0630e8e.chunk.js.map",
+    "runtime-main.js": "/tiny_matrix_client/static/js/runtime-main.d47b2a6b.js",
+    "runtime-main.js.map": "/tiny_matrix_client/static/js/runtime-main.d47b2a6b.js.map",
+    "static/js/2.f7deeb1a.chunk.js": "/tiny_matrix_client/static/js/2.f7deeb1a.chunk.js",
+    "static/js/2.f7deeb1a.chunk.js.map": "/tiny_matrix_client/static/js/2.f7deeb1a.chunk.js.map",
+    "index.html": "/tiny_matrix_client/index.html",
+    "precache-manifest.be957694bd018f8021cbe7c6b914291f.js": "/tiny_matrix_client/precache-manifest.be957694bd018f8021cbe7c6b914291f.js",
+    "service-worker.js": "/tiny_matrix_client/service-worker.js",
+    "static/css/main.b100e6da.chunk.css.map": "/tiny_matrix_client/static/css/main.b100e6da.chunk.css.map",
+    "static/media/logo.svg": "/tiny_matrix_client/static/media/logo.25bf045c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d47b2a6b.js",
+    "static/js/2.f7deeb1a.chunk.js",
+    "static/css/main.b100e6da.chunk.css",
+    "static/js/main.b0630e8e.chunk.js"
+  ]
+}
