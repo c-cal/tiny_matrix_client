@@ -10,7 +10,7 @@ This is an extra small client for the [Matrix protocol](https://en.wikipedia.org
 
 - [x] log in
 
-- [ ] see a list of channels user is part of
+- [x] see a list of channels user is part of
 
 - [ ] choose in them
 

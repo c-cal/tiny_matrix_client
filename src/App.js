@@ -61,7 +61,42 @@ class Login extends Component {
 
 class Chat extends Component {
   render() {
-    return <h1>Chat !!!</h1>;
+    return <Rooms client={this.props.client} />;
+  }
+}
+
+class Rooms extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      rooms: [],
+      selectedRoom: undefined,
+    };
+  }
+
+  handleChange = event => {
+    this.setState({selectedRoom: event.target.value});
+  }
+
+  componentDidMount() {
+    const rooms = this.props.client.getRooms()
+    this.setState({rooms: rooms});
+  }
+
+  listRooms() {
+    const rooms = this.state.rooms;
+    return rooms.map(room =>
+      <option key={room.roomId} value={room.roomId}>{room.name}</option>
+    );
+  }
+
+  render() {
+    const listOptions = this.listRooms()
+    return (
+      <select size="10" value={this.state.selectedRoom} onChange={this.handleChange}>
+        {listOptions}
+      </select>
+    );
   }
 }
 
