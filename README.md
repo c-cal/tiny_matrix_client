@@ -1,6 +1,6 @@
 # Tiny Matrix client
 
-This is in an extra small client for the [Matrix protocol](https://en.wikipedia.org/wiki/Matrix_(protocol). This project is build on top of the [matrix-js-sdk](https://github.com/matrix-org/matrix-js-sdk) with [React](https://reactjs.org/).
+This is an extra small client for the [Matrix protocol](https://en.wikipedia.org/wiki/Matrix_(protocol). This project is build on top of the [matrix-js-sdk](https://github.com/matrix-org/matrix-js-sdk) with [React](https://reactjs.org/).
 
 ## Demo
 
