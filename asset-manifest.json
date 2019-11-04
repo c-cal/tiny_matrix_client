@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/tiny_matrix_client/static/css/main.b100e6da.chunk.css",
-    "main.js": "/tiny_matrix_client/static/js/main.ccf1fcb4.chunk.js",
-    "main.js.map": "/tiny_matrix_client/static/js/main.ccf1fcb4.chunk.js.map",
+    "main.css": "/tiny_matrix_client/static/css/main.fe9cc369.chunk.css",
+    "main.js": "/tiny_matrix_client/static/js/main.f6a08015.chunk.js",
+    "main.js.map": "/tiny_matrix_client/static/js/main.f6a08015.chunk.js.map",
     "runtime-main.js": "/tiny_matrix_client/static/js/runtime-main.d47b2a6b.js",
     "runtime-main.js.map": "/tiny_matrix_client/static/js/runtime-main.d47b2a6b.js.map",
-    "static/js/2.d08b296b.chunk.js": "/tiny_matrix_client/static/js/2.d08b296b.chunk.js",
-    "static/js/2.d08b296b.chunk.js.map": "/tiny_matrix_client/static/js/2.d08b296b.chunk.js.map",
+    "static/js/2.2dc971db.chunk.js": "/tiny_matrix_client/static/js/2.2dc971db.chunk.js",
+    "static/js/2.2dc971db.chunk.js.map": "/tiny_matrix_client/static/js/2.2dc971db.chunk.js.map",
     "index.html": "/tiny_matrix_client/index.html",
-    "precache-manifest.2fa4b3feb5a31a475d9a08c70808ef72.js": "/tiny_matrix_client/precache-manifest.2fa4b3feb5a31a475d9a08c70808ef72.js",
+    "precache-manifest.ba3403bc93e8472941359ee245002379.js": "/tiny_matrix_client/precache-manifest.ba3403bc93e8472941359ee245002379.js",
     "service-worker.js": "/tiny_matrix_client/service-worker.js",
-    "static/css/main.b100e6da.chunk.css.map": "/tiny_matrix_client/static/css/main.b100e6da.chunk.css.map"
+    "static/css/main.fe9cc369.chunk.css.map": "/tiny_matrix_client/static/css/main.fe9cc369.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.d47b2a6b.js",
-    "static/js/2.d08b296b.chunk.js",
-    "static/css/main.b100e6da.chunk.css",
-    "static/js/main.ccf1fcb4.chunk.js"
+    "static/js/2.2dc971db.chunk.js",
+    "static/css/main.fe9cc369.chunk.css",
+    "static/js/main.f6a08015.chunk.js"
   ]
 }

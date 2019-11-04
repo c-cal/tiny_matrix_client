@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/tiny_matrix_client/precache-manifest.2fa4b3feb5a31a475d9a08c70808ef72.js"
+  "/tiny_matrix_client/precache-manifest.ba3403bc93e8472941359ee245002379.js"
 );
 
 self.addEventListener('message', (event) => {
