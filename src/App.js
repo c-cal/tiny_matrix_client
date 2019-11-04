@@ -178,14 +178,19 @@ class RoomSelect extends Component {
   }
 
   handleChange = event => {
-    var roomId = event.target.value
-    this.setState({selectedRoom: roomId});
-    this.props.setCurrentRoomId(roomId)
+    const roomId = event.target.value;
+    this.selectRoomId(roomId);
   }
 
   componentDidMount() {
     const rooms = this.props.client.getRooms()
     this.setState({rooms: rooms});
+    this.selectRoomId(rooms[0].roomId);
+  }
+
+  selectRoomId(roomId) {
+    this.setState({selectedRoomId: roomId});
+    this.props.setCurrentRoomId(roomId)
   }
 
   listRooms() {
