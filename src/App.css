@@ -1,22 +1,26 @@
-.App {
-  text-align: center;
+.message-list {
+    overflow: auto;
+    list-style: none;
+    height: 50vh;
 }
 
-.App-logo {
-  height: 40vmin;
+.message-list li {
+    margin-top: 1.5em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.message-list li:first-child {
+    margin-top:0;
 }
 
-.App-link {
-  color: #09d3ac;
+.message div:nth-child(1) {
+    opacity: 0.5;
+    margin-bottom: .2em;
+}
+
+.message div:nth-child(2) {
+    color: white;
+    background: SkyBlue;
+    padding: .2em .5em;
+    border-radius: .6em;
+    display: inline;
 }

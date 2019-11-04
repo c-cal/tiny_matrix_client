@@ -22,9 +22,13 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
+      <div className="container">
         <Header />
-        {this.state.isClientReady ? <Chat client={this.state.client}/> : <Login setupClient={this.setupClient} />}
+        {
+          this.state.isClientReady ?
+            <Chat client={this.state.client}/> :
+            <Login setupClient={this.setupClient} />
+        }
       </div>
     )
   }
@@ -52,12 +56,39 @@ class Login extends Component {
 
   render() {
     return (
+      <div className="col-sm-5 mx-auto">
       <form onSubmit={this.handleSubmit}>
-        <p><input id="server" type="url" autoComplete="url" placeholder='Server URL' value={this.state.server} onChange={this.handleChange} /></p>
-        <p><input id="username" type="text" autoComplete="username" placeholder='Username' value={this.state.username} onChange={this.handleChange} /></p>
-        <p><input id="password" type="password" autoComplete="current-password" placeholder='Password' value={this.state.password} onChange={this.handleChange} /></p>
-        <input type="submit" value="Log in" />
+
+        <div className="form-group">
+          <div className="input-group flex-nowrap">
+            <div className="input-group-prepend">
+              <span className="input-group-text"><i className="fas fa-at fa-fw"></i></span>
+            </div>
+            <input className="form-control" id="server" type="url" autoComplete="url" placeholder='Server URL' value={this.state.server} onChange={this.handleChange} required />
+          </div>
+        </div>
+
+        <div className="form-group">
+          <div className="input-group flex-nowrap">
+            <div className="input-group-prepend">
+              <span className="input-group-text"><i className="fas fa-user fa-fw"></i></span>
+            </div>
+            <input className="form-control" id="username" type="text" autoComplete="username" placeholder='Username' value={this.state.username} onChange={this.handleChange} required />
+          </div>
+        </div>
+
+        <div className="form-group">
+          <div className="input-group flex-nowrap">
+            <div className="input-group-prepend">
+              <span className="input-group-text"><i className="fas fa-key fa-fw"></i></span>
+            </div>
+            <input className="form-control" id="password" type="password" autoComplete="current-password" placeholder='Password' value={this.state.password} onChange={this.handleChange} required />
+          </div>
+        </div>
+
+        <input className="btn btn-outline-primary btn-block" type="submit" value="Log in" />
       </form>
+        </div>
     )
   }
 }
@@ -154,9 +185,14 @@ class RoomSelect extends Component {
   render() {
     const listOptions = this.listRooms()
     return (
-      <select size="10" value={this.state.selectedRoomId} onChange={this.handleChange}>
-        {listOptions}
-      </select>
+      <div className="input-group flex-nowrap mb-3">
+        <div className="input-group-prepend">
+          <span className="input-group-text">Current room</span>
+        </div>
+        <select className="custom-select" value={this.state.selectedRoomId} onChange={this.handleChange}>
+          {listOptions}
+        </select>
+      </div>
     );
   }
 }
@@ -165,7 +201,7 @@ class MessageList extends Component {
   listMessages() {
     const { messages } = this.props;
     return messages.map(message =>
-      <li key={message.eventId}>
+      <li className="message" key={message.eventId}>
         <div>{message.senderName} - {message.date}</div>
         <div>{message.body}</div>
       </li>
@@ -175,7 +211,7 @@ class MessageList extends Component {
   render() {
     const listItems = this.listMessages()
     return (
-      <ul>
+      <ul className="message-list">
         {listItems}
       </ul>
     )
@@ -203,7 +239,12 @@ class SendMessageForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type="text" placeholder="Type your message and hit ENTER" value={this.state.message} onChange={this.handleChange} />
+        <div className="input-group flex-nowrap">
+          <input className="form-control" type="text" placeholder="Type your message" value={this.state.message} onChange={this.handleChange} />
+          <div className="input-group-append">
+            <button className="btn btn-outline-secondary" type="submit"><i className="fas fa-comment-dots"></i></button>
+          </div>
+        </div>
       </form>
     )
   }
@@ -211,8 +252,8 @@ class SendMessageForm extends Component {
 
 function Header() {
   return (
-    <header>
-      <h1>Tiny Matrix client</h1>
+    <header className="text-center mb-3">
+      <h1>Tiny <a href="https://matrix.org/"><img src="https://matrix.org/images/matrix-logo.svg" alt="" /></a> client</h1>
     </header>
   )
 }
