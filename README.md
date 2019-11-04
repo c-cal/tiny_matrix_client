@@ -10,10 +10,8 @@ This is an extra small client for the [Matrix protocol](https://en.wikipedia.org
 
 - [x] log in
 
-- [x] see a list of channels user is part of
+- [x] see a list of channels user is part of, and choose in them
 
-- [ ] choose in them
+- [x] show recent messages of this channel (those sent after the user is logged in)
 
-- [ ] show recent messages of this channel
-
-- [ ] post a new message
+- [x] post a new message

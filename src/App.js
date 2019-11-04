@@ -60,22 +60,80 @@ class Login extends Component {
 }
 
 class Chat extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      messages: {},
+      currentRoomId: null,
+    };
+  }
+
+  setCurrentRoomId = roomId => {
+    this.setState({currentRoomId: roomId});
+  }
+
+  sendMessage = text => {
+    const roomId = this.state.currentRoomId;
+    if (roomId === null) {
+      return;
+    }
+    const content = {
+      body: text,
+      msgtype: "m.text"
+    };
+    this.props.client.sendEvent(roomId, "m.room.message", content, "")
+      .then(response => {console.log("message sent successfully")})
+      .catch(err => {console.log(err)});
+  }
+
+  componentDidMount() {
+    this.props.client.on("Room.timeline", (event, room, toStartOfTimeline) => {
+      if (event.getType() !== "m.room.message") {
+          return;
+      }
+      const { messages } = this.state
+      const roomMessages = room.roomId in messages ? messages[room.roomId] : []
+      roomMessages.push({
+        eventId: event.getId(),
+        date: event.getDate().toLocaleString(),
+        body: event.getContent().body,
+        senderName: event.sender.name,
+      })
+      this.setState(prevState => ({
+        messages: {
+          ...prevState.messages,
+          [room.roomId]: roomMessages,
+        }
+      }));
+    });
+  }
+
   render() {
-    return <Rooms client={this.props.client} />;
+    const { currentRoomId, messages } = this.state
+    const currentMessages = currentRoomId in messages ? messages[currentRoomId] : []
+    return (
+      <div className="app">
+        <RoomSelect client={this.props.client} setCurrentRoomId={this.setCurrentRoomId} />
+        <MessageList messages={currentMessages} />
+        <SendMessageForm sendMessage={this.sendMessage} />
+      </div>
+    );
   }
 }
 
-class Rooms extends Component {
+class RoomSelect extends Component {
   constructor(props) {
     super(props);
     this.state = {
       rooms: [],
-      selectedRoom: undefined,
+      selectedRoomId: undefined,
     };
   }
 
   handleChange = event => {
-    this.setState({selectedRoom: event.target.value});
+    var roomId = event.target.value
+    this.setState({selectedRoom: roomId});
+    this.props.setCurrentRoomId(roomId)
   }
 
   componentDidMount() {
@@ -93,10 +151,58 @@ class Rooms extends Component {
   render() {
     const listOptions = this.listRooms()
     return (
-      <select size="10" value={this.state.selectedRoom} onChange={this.handleChange}>
+      <select size="10" value={this.state.selectedRoomId} onChange={this.handleChange}>
         {listOptions}
       </select>
     );
+  }
+}
+
+class MessageList extends Component {
+  listMessages() {
+    const { messages } = this.props;
+    return messages.map(message =>
+      <li key={message.eventId}>
+        <div>{message.senderName} - {message.date}</div>
+        <div>{message.body}</div>
+      </li>
+    );
+  }
+
+  render() {
+    const listItems = this.listMessages()
+    return (
+      <ul>
+        {listItems}
+      </ul>
+    )
+  }
+}
+
+class SendMessageForm extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      message: ''
+    }
+  }
+
+  handleChange = event => {
+    this.setState({message: event.target.value})
+  }
+
+  handleSubmit = event => {
+    this.props.sendMessage(this.state.message)
+    this.setState({message: ''})
+    event.preventDefault()
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <input type="text" placeholder="Type your message and hit ENTER" value={this.state.message} onChange={this.handleChange} />
+      </form>
+    )
   }
 }
 
