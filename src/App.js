@@ -41,16 +41,22 @@ class Login extends Component {
       server: "https://matrix.org",
       username: '',
       password: '',
+      isLoading: false
     };
   }
 
   handleChange = event => this.setState({[event.target.id]: event.target.value});
 
   handleSubmit = event => {
-    const client = sdk.createClient(this.state.server);
-    client.login("m.login.password", {"user": this.state.username, "password": this.state.password})
-      .then(response => this.props.setupClient(client))
-      .catch(err => alert(err.message));
+    this.setState({isLoading: true}, () => {
+      const client = sdk.createClient(this.state.server);
+      client.login("m.login.password", {"user": this.state.username, "password": this.state.password})
+        .then(response => this.props.setupClient(client))
+        .catch(err => {
+          alert(err.message);
+          this.setState({isLoading: false});
+        })
+    })
     event.preventDefault();
   }
 
@@ -86,7 +92,14 @@ class Login extends Component {
           </div>
         </div>
 
-        <input className="btn btn-outline-primary btn-block" type="submit" value="Log in" />
+        {
+          this.state.isLoading ?
+            <button className="btn btn-outline-secondary btn-block disabled" type="button">
+              Loading...
+              <div className="spinner-border spinner-border-sm float-right" role="status" aria-hidden="true"></div>
+            </button> :
+            <input className="btn btn-outline-primary btn-block" type="submit" value="Log in" />
+        }
       </form>
         </div>
     )
