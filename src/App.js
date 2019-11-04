@@ -22,7 +22,10 @@ class App extends Component {
 
   render() {
     return (
-      this.state.isClientReady ? <Chat client={this.state.client}/> : <Login setupClient={this.setupClient} />
+      <div className="app">
+        <Header />
+        {this.state.isClientReady ? <Chat client={this.state.client}/> : <Login setupClient={this.setupClient} />}
+      </div>
     )
   }
 }
@@ -112,7 +115,7 @@ class Chat extends Component {
     const { currentRoomId, messages } = this.state
     const currentMessages = currentRoomId in messages ? messages[currentRoomId] : []
     return (
-      <div className="app">
+      <div className="chat">
         <RoomSelect client={this.props.client} setCurrentRoomId={this.setCurrentRoomId} />
         <MessageList messages={currentMessages} />
         <SendMessageForm sendMessage={this.sendMessage} />
@@ -204,6 +207,14 @@ class SendMessageForm extends Component {
       </form>
     )
   }
+}
+
+function Header() {
+  return (
+    <header>
+      <h1>Tiny Matrix client</h1>
+    </header>
+  )
 }
 
 export default App;
