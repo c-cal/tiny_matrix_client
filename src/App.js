@@ -63,45 +63,45 @@ class Login extends Component {
   render() {
     return (
       <div className="col-sm-5 mx-auto">
-      <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
 
-        <div className="form-group">
-          <div className="input-group flex-nowrap">
-            <div className="input-group-prepend">
-              <span className="input-group-text"><i className="fas fa-at fa-fw"></i></span>
+          <div className="form-group">
+            <div className="input-group flex-nowrap">
+              <div className="input-group-prepend">
+                <span className="input-group-text"><i className="fas fa-at fa-fw"></i></span>
+              </div>
+              <input className="form-control" id="server" type="url" autoComplete="url" placeholder='Server URL' value={this.state.server} onChange={this.handleChange} required />
             </div>
-            <input className="form-control" id="server" type="url" autoComplete="url" placeholder='Server URL' value={this.state.server} onChange={this.handleChange} required />
           </div>
-        </div>
 
-        <div className="form-group">
-          <div className="input-group flex-nowrap">
-            <div className="input-group-prepend">
-              <span className="input-group-text"><i className="fas fa-user fa-fw"></i></span>
+          <div className="form-group">
+            <div className="input-group flex-nowrap">
+              <div className="input-group-prepend">
+                <span className="input-group-text"><i className="fas fa-user fa-fw"></i></span>
+              </div>
+              <input className="form-control" id="username" type="text" autoComplete="username" placeholder='Username' value={this.state.username} onChange={this.handleChange} required />
             </div>
-            <input className="form-control" id="username" type="text" autoComplete="username" placeholder='Username' value={this.state.username} onChange={this.handleChange} required />
           </div>
-        </div>
 
-        <div className="form-group">
-          <div className="input-group flex-nowrap">
-            <div className="input-group-prepend">
-              <span className="input-group-text"><i className="fas fa-key fa-fw"></i></span>
+          <div className="form-group">
+            <div className="input-group flex-nowrap">
+              <div className="input-group-prepend">
+                <span className="input-group-text"><i className="fas fa-key fa-fw"></i></span>
+              </div>
+              <input className="form-control" id="password" type="password" autoComplete="current-password" placeholder='Password' value={this.state.password} onChange={this.handleChange} required />
             </div>
-            <input className="form-control" id="password" type="password" autoComplete="current-password" placeholder='Password' value={this.state.password} onChange={this.handleChange} required />
           </div>
-        </div>
 
-        {
-          this.state.isLoading ?
-            <button className="btn btn-outline-secondary btn-block disabled" type="button">
-              Loading...
-              <div className="spinner-border spinner-border-sm float-right" role="status" aria-hidden="true"></div>
-            </button> :
-            <input className="btn btn-outline-primary btn-block" type="submit" value="Log in" />
-        }
-      </form>
-        </div>
+          {
+            this.state.isLoading ?
+              <button className="btn btn-outline-secondary btn-block disabled" type="button">
+                Loading...
+                <div className="spinner-border spinner-border-sm float-right" role="status" aria-hidden="true"></div>
+              </button> :
+              <input className="btn btn-outline-primary btn-block" type="submit" value="Log in" />
+          }
+        </form>
+      </div>
     )
   }
 }
