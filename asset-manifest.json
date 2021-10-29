@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/tiny_matrix_client/static/css/main.797e4a67.chunk.css",
-    "main.js": "/tiny_matrix_client/static/js/main.bcb6e628.chunk.js",
-    "main.js.map": "/tiny_matrix_client/static/js/main.bcb6e628.chunk.js.map",
+    "main.js": "/tiny_matrix_client/static/js/main.be85e2d6.chunk.js",
+    "main.js.map": "/tiny_matrix_client/static/js/main.be85e2d6.chunk.js.map",
     "runtime-main.js": "/tiny_matrix_client/static/js/runtime-main.63fdd308.js",
     "runtime-main.js.map": "/tiny_matrix_client/static/js/runtime-main.63fdd308.js.map",
-    "static/js/2.f38c4a8e.chunk.js": "/tiny_matrix_client/static/js/2.f38c4a8e.chunk.js",
-    "static/js/2.f38c4a8e.chunk.js.map": "/tiny_matrix_client/static/js/2.f38c4a8e.chunk.js.map",
+    "static/js/2.b4d193f4.chunk.js": "/tiny_matrix_client/static/js/2.b4d193f4.chunk.js",
+    "static/js/2.b4d193f4.chunk.js.map": "/tiny_matrix_client/static/js/2.b4d193f4.chunk.js.map",
     "index.html": "/tiny_matrix_client/index.html",
     "static/css/main.797e4a67.chunk.css.map": "/tiny_matrix_client/static/css/main.797e4a67.chunk.css.map",
-    "static/js/2.f38c4a8e.chunk.js.LICENSE.txt": "/tiny_matrix_client/static/js/2.f38c4a8e.chunk.js.LICENSE.txt"
+    "static/js/2.b4d193f4.chunk.js.LICENSE.txt": "/tiny_matrix_client/static/js/2.b4d193f4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.63fdd308.js",
-    "static/js/2.f38c4a8e.chunk.js",
+    "static/js/2.b4d193f4.chunk.js",
     "static/css/main.797e4a67.chunk.css",
-    "static/js/main.bcb6e628.chunk.js"
+    "static/js/main.be85e2d6.chunk.js"
   ]
 }
